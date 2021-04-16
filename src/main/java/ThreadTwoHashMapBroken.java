@@ -31,15 +31,15 @@ public class ThreadTwoHashMapBroken extends Thread {
     public static void main(String[] args){
         ThreadTwoHashMapBroken tm = new ThreadTwoHashMapBroken(""+10);
 
-        // What's wrong with this idea??...
-        new Thread("Run of " + 6){
+        // What's wrong with this idea??...Because both of these threads using both run method at the same time, and both updating/changing threadMap at the same time
+        new Thread("Run of " + 20){
             public void run(){
-                tm.runMapOfSize(6);
+                tm.runMapOfSize(20);
             }
         }.start();
-        new Thread("Run of " + 8){
+        new Thread("Run of " + 28){
             public void run(){
-                tm.runMapOfSize(8);
+                tm.runMapOfSize(22);
             }
         }.start();
 
